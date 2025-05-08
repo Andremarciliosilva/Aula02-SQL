@@ -23,11 +23,9 @@ ORDER BY o.order_date ASC
 LIMIT 5;
 
 -- 4. Obter a contagem de todos os Pedidos feitos durante 1997
-SELECT  o.order_date, COUNT(*)
+SELECT COUNT(o.order_date)
 FROM mydb.public.orders AS o
 WHERE o.order_date BETWEEN '1997-01-01' AND '1997-12-31'
-GROUP BY o.order_date
-ORDER BY o.order_date ASC;
 
 -- 5. Obter os nomes de todas as pessoas de contato onde a pessoa é um gerente, em ordem alfabética
 SELECT  c.contact_name,
