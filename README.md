@@ -25,7 +25,7 @@ Este projeto foi desenvolvido para praticar habilidades de:
 
 ### 📂 Estrutura do projeto
 
-O projeto contém um script SQL para criação do bano de dados e outro script SQL com as
+O projeto contém um script SQL (create_table.sql) para criação do banco de dados e outro script SQL com as
 (queries.sql) para responder as perguntas de negócio abaixo sobre o banco de dados de exemplo.
 
 ---
@@ -55,4 +55,4 @@ O projeto contém um script SQL para criação do bano de dados e outro script S
 
 3. Execute o arquivo do script SQL (create_table.sql) que está disponível neste repositório.
 
-4. Execute as queries contidas no script SQL (queries.sql) para obter as respostas das perguntas de negócios.
+4. Execute as queries contidas no script SQL (queries.sql) uma de cada vez para obter as respostas das perguntas de negócios.
