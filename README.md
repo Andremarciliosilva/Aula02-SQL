@@ -44,6 +44,20 @@ O projeto contém um script SQL (create_table.sql) para criação do banco de da
 
 ✅ **6. Obter todos os pedidos feitos em 19 de maio de 1997**
 
+✅ **7. Crie um relatório para todos os pedidos de 1996 e seus clientes (152 linhas)**
+
+✅ **8. Crie um relatório que mostra o número de funcionários e clientes de cada cidade que tem funcionários (5 linhas)**
+
+✅ **9. Crie um relatório que mostra o número de funcionários e clientes de cada cidade que tem clientes (69 linhas)**
+
+✅ **10.Crie um relatório que mostra o número de funcionários e clientes de cada cidade (71 linhas)**
+
+✅ **11. Crie um relatório que mostra a quantidade total de produtos encomendados.**  
+Mostra apenas registros para produtos para os quais a quantidade encomendada é menor que 200 (5 linhas)
+
+✅ **12. Crie um relatório que mostra o total de pedidos por cliente desde 31 de dezembro de 1996.**  
+O relatório deve retornar apenas linhas para as quais o total de pedidos é maior que 15 (5 linhas)
+
 ---
 
 ### 🚀 Como executar
