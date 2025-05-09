@@ -38,3 +38,30 @@ ORDER BY c.contact_name ASC;
 SELECT  o.order_date
 FROM mydb.public.orders AS o
 WHERE o.order_date = '1997-05-19' 
+
+-- 7. Cria um relatório para todos os pedidos de 1996 e seus clientes (152 linhas)
+SELECT 
+	o.customer_id,
+	o.order_date
+FROM mydb.public.orders AS o 
+WHERE EXTRACT (YEAR FROM order_date) = 1996
+GROUP BY customer_id, order_date;
+
+-- 8. Cria um relatório que mostra o número de funcionários e clientes de cada cidade que tem funcionários (5 linhas)
+SELECT
+	e.city,
+	COUNT(DISTINCT e.employee_id) as number_employees,
+	COUNT(DISTINCT c.customer_id) as number_customers
+FROM employees AS e 
+LEFT JOIN customers AS c ON e.city = c.city
+GROUP BY e.city;
+
+-- 9. Cria um relatório que mostra o número de funcionários e clientes de cada cidade que tem clientes (69 linhas)
+
+-- 10.Cria um relatório que mostra o número de funcionários e clientes de cada cidade (71 linhas)
+
+-- 11. Cria um relatório que mostra a quantidade total de produtos encomendados.
+-- Mostra apenas registros para produtos para os quais a quantidade encomendada é menor que 200 (5 linhas)
+
+-- 12. Cria um relatório que mostra o total de pedidos por cliente desde 31 de dezembro de 1996.
+-- O relatório deve retornar apenas linhas para as quais o total de pedidos é maior que 15 (5 linhas)
