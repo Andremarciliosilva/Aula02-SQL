@@ -56,12 +56,39 @@ FROM employees AS e
 LEFT JOIN customers AS c ON e.city = c.city
 GROUP BY e.city;
 
--- 9. Cria um relatório que mostra o número de funcionários e clientes de cada cidade que tem clientes (69 linhas)
+-- 9. Criar um relatório que mostra o número de funcionários e clientes de cada cidade que tem clientes (69 linhas)
+SELECT 
+    c.city,
+    COUNT(DISTINCT c.customer_id) AS numero_clientes,
+    COUNT(DISTINCT f.employee_id) AS numero_funcionarios
+FROM 
+    customers c
+LEFT JOIN 
+    employees AS f ON c.city = f.city
+GROUP BY 
+    c.city;
 
--- 10.Cria um relatório que mostra o número de funcionários e clientes de cada cidade (71 linhas)
+-- 10.Criar um relatório que mostra o número de funcionários e clientes de cada cidade (71 linhas)
+SELECT 
+	COALESCE(e.city, c.city) AS cidade,
+	COUNT(DISTINCT e.employee_id) AS num_funcionarios,
+	COUNT(DISTINCT c.customer_id) AS num_clientes
+FROM customers AS c
+FULL JOIN employees AS e ON c.city = e.city
+GROUP BY c.city, e.city
+ORDER BY cidade;
 
--- 11. Cria um relatório que mostra a quantidade total de produtos encomendados.
+-- 11. Criar um relatório que mostra a quantidade total de produtos encomendados.
 -- Mostra apenas registros para produtos para os quais a quantidade encomendada é menor que 200 (5 linhas)
+SELECT
+	o.product_id,
+	p.product_name,
+	SUM(o.quantity) AS quantidade_total
+FROM order_details AS o
+JOIN products p ON p.product_id = o.product_id
+GROUP BY o.product_id, p.product_id
+HAVING SUM(o.quantity) < 200
+ORDER BY quantidade_total DESC;
 
--- 12. Cria um relatório que mostra o total de pedidos por cliente desde 31 de dezembro de 1996.
+-- 12. Criar um relatório que mostra o total de pedidos por cliente desde 31 de dezembro de 1996.
 -- O relatório deve retornar apenas linhas para as quais o total de pedidos é maior que 15 (5 linhas)
